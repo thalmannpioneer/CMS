@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/script.js" defer></script>
+
+    <title>CMS</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <div class="header__content">
+                <h1 class="header__title">CMS</h1>
+                <p class="header__total">Итоговая стоимость: <span class="header__total_emph">$900.00</span></p>
+            </div>
+            <div class="header__splitter"></div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main__container container">
+            <header class="main__header">
+                <div class="main__header-left-wrapper">
+                    <button class="main__filter-button">
+                        <img src="icons/filter.svg" alt="FILTER">
+                        Фильтр
+                    </button>
+                    <div class="main__search-wrapper">
+                        <img src="icons/search.svg" alt="SEARCH">
+                        <textarea class="main__search-textarea" cols="45" rows="1"
+                            placeholder="Поиск по наименованию и категории"></textarea>
+                    </div>
+                </div>
+                <button class="main__add-button" onclick=add_toggle()>добавить товар</button>
+            </header>
+
+            <main>
+                <table class="main__table table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>наименование</th>
+                            <th>категория</th>
+                            <th>ед&#47;изм</th>
+                            <th>количество</th>
+                            <th>цена</th>
+                            <th>итог</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>246016548</td>
+                            <td>Навигационная система Soundmax</td>
+                            <td>Техника для дома</td>
+                            <td>шт</td>
+                            <td>5</td>
+                            <td>$100</td>
+                            <td>$500</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>937295527</td>
+                            <td>Настольная игра &quot;На 4-х ногах&quot;</td>
+                            <td>Настольные игры</td>
+                            <td>шт</td>
+                            <td>12</td>
+                            <td>$14</td>
+                            <td>$168</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>246016548</td>
+                            <td>Навигационная система Soundmax</td>
+                            <td>Техника для дома</td>
+                            <td>шт</td>
+                            <td>5</td>
+                            <td>$100</td>
+                            <td>$500</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+
+            <footer>
+                <div class="main__table-footer table-footer">
+                    <div class="table-footer__display">
+                        <label for="display-options">Показывать на странице:</label>
+                        <select id="display-options">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                    <p class="table-footer__numofdisp">1-10 из 276</p>
+                    <div class="table-footer__arrows">
+                        <button class="table-footer__arrow"><img src="icons/arrow_left.svg" alt="ARROW_LEFT"></button>
+                        <button class="table-footer__arrow"><img src="icons/arrow_right.svg" alt="ARROW_RIGHT"></button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!--Pop-ups-->
+    <div class="dark" id="dark"></div>
+
+    <div class="add" id="add">
+        <button class="add__close" onclick=add_toggle()>
+            <img src="icons/close.svg" alt="CLOSE">
+        </button>
+
+        <header class="add__header">
+            <h1 class="add__title">добавить товар</h1>
+            <div class="add__splitter"></div>
+        </header>
+
+        <main class="add__main">
+            <form action="" method="get" class="add__form form">
+                <div class="form__top">
+                    <div class="form__left">
+                        <div class="form__wrapper">
+                            <label for="name" class="form__label">наименование</label>
+                            <input name="name" class="form__input">
+                        </div>
+                        <div class="form__wrapper">
+                            <label for="cat" class="form__label">категория</label>
+                            <input name="cat" class="form__input">
+                        </div>
+                    </div>
+                    <div class="form__right">
+                        <div class="form__wrapper">
+                            <label for="name" class="form__label">описание</label>
+                            <input name="name" class="form__input form__input_large">
+                        </div>
+                    </div>
+                </div>
+                <div class="form__bottom">
+                    <div class="form__wrapper">
+                        <label for="metric" class="form__label">единицы измерения</label>
+                        <input name="metric" class="form__input">
+                    </div>
+                    <div class="form__wrapper">
+                        <label for="quant" class="form__label">количество</label>
+                        <input name="quant" class="form__input">
+                    </div>
+                    <div class="form__wrapper">
+                        <label for="discount" class="form__label">дисконт</label>
+                        <input name="discount" class="form__input">
+                    </div>
+                    <div class="form__wrapper">
+                        <label for="price" class="form__label">цена</label>
+                        <input name="price" class="form__input">
+                    </div>
+                </div>
+                <div class="form__image-input">
+                    <label class="form__image">
+                        <input type="file" name="image">
+                        <p>добавить изображение</p>
+                    </label>
+                </div>
+            </form>
+        </main>
+
+        <footer class="add__footer">
+            <p class="add__total">Итоговая стоимость: <span class="add__total_emph">$ 900.00</span></p>
+            <button class="add__add">добавить товар</button>
+        </footer>
+    </div>
+</body>
+
+</html>

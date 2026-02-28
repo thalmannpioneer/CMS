@@ -1,0 +1,288 @@
+$bg_parent: #F2F0F9
+$bg_stripe: #F4F2FF
+
+$primary: #6D5BD0
+
+$font_primary: #25213B
+$font_primary_variant: #6E6893
+$font_stroke: #C6C2DE
+$table_stroke: #D9D5EC
+
+$shadow: #00000034
+
+$dark: rgba(0, 0, 0, 0.5)
+
+@font-face
+    font-family: Inter
+    font-style: normal
+    font-weight: 400
+    src: url("../fonts/Inter-Regular.woff2")
+
+@font-face
+    font-family: Inter
+    font-style: normal
+    font-weight: 500
+    src: url("../fonts/Inter-Medium.woff2")
+
+@font-face
+    font-family: Inter
+    font-style: normal
+    font-weight: 600
+    src: url("../fonts/Inter-SemiBold.woff2")
+
+@font-face
+    font-family: Inter
+    font-style: normal
+    font-weight: 700
+    src: url("../fonts/Inter-Bold.woff2")
+
+*
+    box-sizing: border-box
+
+html
+    background: $bg_parent
+
+body
+    margin: 0
+    padding: 0
+    font-family: Inter
+    line-height: 1.21
+
+h1
+    padding: 0
+    margin: 0
+
+p
+    padding: 0
+    margin: 0
+
+button
+    background: none
+    border: none
+
+textarea
+    background: none
+    resize: none
+    border: none
+    outline: none
+
+select
+    background: none
+    border: none
+
+input
+    border: none
+    outline: none
+
+.container
+    max-width: 1100px
+    margin: 0 auto
+
+.header
+    padding-top: 80px
+    &__content
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        padding: 0 20px
+    &__title
+        font-size: 24px
+        font-weight: 700
+        color: $font_primary_variant
+    &__total
+        font-size: 14px
+        font-weight: 400
+        color: $font_primary_variant
+    &__total_emph
+        font-size: 18px
+        font-weight: 700
+        color: $primary
+    &__splitter
+        height: 1px
+        background: $font_stroke
+        margin-top: 7px
+
+.main
+    padding-top: 20px
+    &__container
+        box-shadow: 0 0 5px 0 $shadow
+        border-radius: 8px
+    &__header
+        display: flex
+        padding: 15px 20px
+        justify-content: space-between
+        background: white
+        border-radius: 8px 8px 0 0
+    &__header-left-wrapper
+        display: flex
+        column-gap: 20px
+    &__filter-button
+        padding: 10px
+        display: flex
+        column-gap: 10px
+        border: 1px solid $font_stroke
+        border-radius: 6px
+        font-size: 16px
+        font-weight: 400
+    &__search-wrapper
+        background: $bg_stripe
+        padding: 10px
+        display: flex
+        align-items: center
+        column-gap: 10px
+        border-radius: 6px
+    &__search-textarea
+        font-size: 12px
+    &__add-button
+        color: white
+        background: $primary
+        text-transform: uppercase
+        padding: 10px 15px
+        border-radius: 6px
+        font-weight: 500
+        font-size: 16px
+.table
+    width: 100%
+    th
+        text-transform: uppercase
+        font-weight: 500
+        font-size: 12px
+        color: $font_primary_variant
+        text-align: left
+        padding: 15px
+    td
+        color: $font_primary
+        font-size: 14px
+        padding: 15px
+    tr
+        padding: 15px
+        border-top: 1px solid $table_stroke
+        border-bottom: 1px solid $table_stroke
+    tbody
+        background: white
+.table-footer
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    column-gap: 50px
+    padding: 13px
+    font-size: 12px
+    font-weight: 500
+    color: $font_primary_variant
+    #display-options
+        font-weight: 500
+        color: $font_primary_variant
+    &__arrows
+        display: flex
+        column-gap: 50px
+
+.dark
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100vh
+    background: $dark
+    visibility: hidden
+    opacity: 0
+    transition: all .1s ease
+    &__visible
+        visibility: visible
+        opacity: 1
+
+.add
+    position: fixed
+    top: 100px
+    left: calc(50vw - 396px)
+    width: 792px
+    padding: 32px 106px
+    background: $bg_parent
+    box-shadow: 0 0 6px 0 $shadow
+    opacity: 0
+    transition: all .1s ease
+    &__visible
+        visibility: visible
+        opacity: 1
+    &__title
+        text-transform: uppercase
+        letter-spacing: 5%
+        font-weight: 700
+        color: $font_primary_variant
+        margin-bottom: 20px
+    &__splitter
+        height: 1px
+        background: $font_stroke
+    &__main
+        background: white
+        padding: 38px 28px
+        margin-top: 21px
+        border-radius: 8px
+        box-shadow: 0 0 5px 0 $shadow
+        margin-bottom: 28px
+    &__footer
+        display: flex
+        justify-content: space-between
+    &__total
+        font-size: 14px
+        color: $font_primary_variant
+        &_emph
+            font-size: 18px
+            color: $primary
+            font-weight: 700
+    &__add
+        text-transform: uppercase
+        padding: 10px 25px
+        color: white
+        background: $primary
+        border-radius: 6px
+    &__close
+        position: absolute
+        top: 20px
+        right: 30px
+.form
+    &__label
+        padding-left: 10px
+        font-size: 12px
+        font-weight: 500
+        letter-spacing: 5%
+        color: $font_primary_variant
+        text-transform: uppercase
+    &__input
+        width: 250px
+        height: 40px
+        border-radius: 6px
+        background: $bg_stripe
+        &_large
+            height: 112px
+    &__top
+        display: flex
+        justify-content: space-between
+        margin-bottom: 12px
+    &__left
+        display: flex
+        flex-direction: column
+        row-gap: 12px
+    &__bottom
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        row-gap: 12px
+        margin-bottom: 32px
+    &__wrapper
+        display: flex
+        flex-direction: column
+        row-gap: 5px
+    &__image-input
+        height: 39px
+    &__image
+        display: flex
+        justify-content: flex-end
+        p
+            text-transform: uppercase
+            color: white
+            padding: 11px 28px
+            border-radius: 6px
+            background: $primary
+            cursor: pointer
+        input
+            display: none
