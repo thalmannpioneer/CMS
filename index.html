@@ -155,7 +155,12 @@
                     </div>
                     <div class="form__wrapper">
                         <label for="discount" class="form__label">дисконт</label>
-                        <input name="discount" class="form__input">
+                        <div class="form__discount-wrapper">
+                            <button class="form__checkmark">
+                                <img src="icons/checkmark.svg" alt="CHECKMARK">
+                            </button>
+                            <input name="discount" class="form__input form__input_small">
+                        </div>
                     </div>
                     <div class="form__wrapper">
                         <label for="price" class="form__label">цена</label>
@@ -173,8 +178,18 @@
 
         <footer class="add__footer">
             <p class="add__total">Итоговая стоимость: <span class="add__total_emph">$ 900.00</span></p>
-            <button class="add__add">добавить товар</button>
+            <button class="add__add" onclick=error_toggle()>добавить товар</button>
         </footer>
+    </div>
+
+    <div id="error" class="error">
+        <button class="error__close" onclick=error_toggle()>
+            <img src="icons/close.svg" alt="CLOSE">
+        </button>
+
+        <img src="icons/cross.svg" alt="CROSS">
+
+        <h2 class="error__title">что-то пошло не так</h2>
     </div>
 </body>
 

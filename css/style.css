@@ -50,6 +50,7 @@ p {
 button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 textarea {
@@ -153,6 +154,7 @@ input {
   border-radius: 6px;
   font-weight: 500;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .table {
@@ -270,11 +272,13 @@ input {
   color: white;
   background: #6D5BD0;
   border-radius: 6px;
+  cursor: pointer;
 }
 .add__close {
   position: absolute;
   top: 20px;
   right: 30px;
+  cursor: pointer;
 }
 
 .form__label {
@@ -293,6 +297,9 @@ input {
 }
 .form__input_large {
   height: 112px;
+}
+.form__input_small {
+  width: 200px;
 }
 .form__top {
   display: flex;
@@ -333,4 +340,43 @@ input {
 }
 .form__image input {
   display: none;
+}
+.form__checkmark {
+  width: 40px;
+  height: 40px;
+  background: #F4F2FF;
+  border-radius: 6px;
+}
+
+.error {
+  position: fixed;
+  top: 232px;
+  left: calc(50vw - 175px);
+  width: 350px;
+  height: 350px;
+  background: #F2F0F9;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2039215686);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 33px;
+  opacity: 0;
+  transition: all 0.1s ease;
+}
+.error__visible {
+  visibility: visible;
+  opacity: 1;
+}
+.error__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6E6893;
+  text-transform: uppercase;
+}
+.error__close {
+  position: absolute;
+  top: 26px;
+  right: 29px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

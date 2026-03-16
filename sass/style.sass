@@ -59,6 +59,7 @@ p
 button
     background: none
     border: none
+    cursor: pointer
 
 textarea
     background: none
@@ -141,6 +142,7 @@ input
         border-radius: 6px
         font-weight: 500
         font-size: 16px
+        cursor: pointer
 .table
     width: 100%
     th
@@ -235,10 +237,12 @@ input
         color: white
         background: $primary
         border-radius: 6px
+        cursor: pointer
     &__close
         position: absolute
         top: 20px
         right: 30px
+        cursor: pointer
 .form
     &__label
         padding-left: 10px
@@ -254,6 +258,8 @@ input
         background: $bg_stripe
         &_large
             height: 112px
+        &_small
+            width: 200px
     &__top
         display: flex
         justify-content: space-between
@@ -286,3 +292,37 @@ input
             cursor: pointer
         input
             display: none
+    &__checkmark
+        width: 40px
+        height: 40px
+        background: $bg_stripe
+        border-radius: 6px
+
+.error
+    position: fixed
+    top: 232px
+    left: calc(50vw - 175px)
+    width: 350px
+    height: 350px
+    background: $bg_parent
+    box-shadow: 0 0 6px 0 $shadow
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    row-gap: 33px
+    opacity: 0
+    transition: all .1s ease
+    &__visible
+        visibility: visible
+        opacity: 1
+    &__title
+        font-size: 18px
+        font-weight: 600
+        color: $font_primary_variant
+        text-transform: uppercase
+    &__close
+        position: absolute
+        top: 26px
+        right: 29px
+        cursor: pointer
